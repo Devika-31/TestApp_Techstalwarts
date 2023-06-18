@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_graph.xml"
+    app:startDestination="@id/userFragment">
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.india.testingapp.ui.home.fragment.UserFragment"
+        android:label="UserFragment" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.india.testingapp.ui.home.fragment.LocationFragment"
+        android:label="LocationFragment" />
+    <fragment
+        android:id="@+id/logoutFragment"
+        android:name="com.india.testingapp.ui.home.fragment.LogoutFragment"
+        android:label="LogoutFragment" />
+</navigation>
