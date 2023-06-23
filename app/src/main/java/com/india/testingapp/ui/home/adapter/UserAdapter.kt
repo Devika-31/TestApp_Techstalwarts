@@ -1,5 +1,6 @@
 package com.india.testingapp.ui.home.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,7 @@ class UserAdapter(private val dataList:List<Data>): RecyclerView.Adapter<UserAda
     }
 
     override fun getItemCount(): Int {
+        Log.e("item count",""+dataList.size)
         return dataList.size
     }
 

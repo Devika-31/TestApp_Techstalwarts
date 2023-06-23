@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,19 +9,26 @@
     tools:context=".ui.home.HomeFragment">
 
     <Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primary"
         android:title="User List"
+        android:textAlignment="center"
         android:titleTextColor="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:layout_margin="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:itemCount="10"
+        tools:itemCount="4"
         tools:listitem="@layout/user_info_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
