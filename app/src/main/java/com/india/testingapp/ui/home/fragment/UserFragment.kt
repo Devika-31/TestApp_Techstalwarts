@@ -11,7 +11,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.india.testingapp.NetworkResult
-import com.india.testingapp.databinding.FragmentHomeBinding
 import com.india.testingapp.databinding.UserFragmentBinding
 import com.india.testingapp.ui.home.HomeViewModel
 import com.india.testingapp.ui.home.adapter.UserAdapter
@@ -19,7 +18,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class UserFragment :Fragment(){
-    private lateinit var binding:UserFragmentBinding
     private val viewModel: HomeViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,9 +37,9 @@ class UserFragment :Fragment(){
                     binding.progress.isVisible = true
                 }
                 is NetworkResult.Success -> {
-                    val adapterList = UserAdapter(it.data?.data!!)
+                    val userAdapterList = UserAdapter(it.data?.data?: arrayListOf())
                     with(binding.recyclerView) {
-                        adapter = adapterList
+                        adapter = userAdapterList
                         layoutManager = LinearLayoutManager(requireContext(),
                             RecyclerView.VERTICAL,false)
                     }
